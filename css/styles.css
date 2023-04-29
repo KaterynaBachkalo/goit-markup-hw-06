@@ -562,6 +562,7 @@ img {
     background: var(--iris-color);
     color: var(--white-txt-color);
     border-radius: 4px;
+    border: none;
 
     transition: background var(--animation);
 }
