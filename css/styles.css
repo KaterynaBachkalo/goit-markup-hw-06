@@ -876,6 +876,7 @@ img {
     fill: var(--navi-blue-color);
 
     transition: fill var(--animation);
+    pointer-events: none;
 }
 
 .modal-label-input:hover+.modal-icon-input,
@@ -924,14 +925,20 @@ img {
     color: var(--iris-color);
 }
 
-.checkbox-icon {
-    width: 16px;
-    height: 16px;
-    border: 1px solid var(--navy-blue-bgmodal);
-    border-radius: 2px;
+.checkbox-icon-unchecked {
+    opacity: 1;
+    transition: opacity var(--animation);
 }
 
-.checkbox:checked+.checkbox-icon {
-    border: 1px solid var(--ocean-color);
-    background: var(--ocean-color);
+.checkbox-icon-checked {
+    opacity: 0;
+    transition: opacity var(--animation);
+}
+
+.checkbox:checked+.checkbox-icon>.checkbox-icon-checked {
+    opacity: 1;
+}
+
+.checkbox:checked+.checkbox-icon>.checkbox-icon-unchecked {
+    opacity: 0;
 }
